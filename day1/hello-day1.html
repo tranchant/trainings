@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To prepare the environment &#8212; NGS Data Analysis Training</title>
+    <title>FIRST DAY : to load the data used for the training &#8212; NGS Data Analysis Training</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -234,79 +234,6 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#where-am-i-on-the-ifb-cluster">
-   Where am I on the IFB cluster ?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#first-day-to-load-the-data-used-for-the-training">
-   FIRST DAY : to load the data used for the training
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#copy-a-dataset-used-for-the-training-using-the-linux-command-cp">
-     Copy a dataset used for the training using the linux command
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       cp
-      </span>
-     </code>
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#list-the-content-of-the-directory-using-the-linux-command-ls">
-       List the content of the directory using the linux command
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         ls
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#copy-this-directory-in-your-mydatalocal">
-       Copy this directory in your “mydatalocal”
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#list-the-content-of-your-mydatalocal-using-the-linux-command-cp">
-       List the content of your “mydatalocal” using the linux command
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         cp
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#downlad-the-data-used-for-linux-practice-wget-command">
-       Downlad the data used for linux practice -
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         wget
-        </span>
-       </code>
-       command
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#uncompress-linux-tp-directory-tar-zxvf">
-       Uncompress LINUX-TP directory -
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         tar
-        </span>
-        <span class="pre">
-         zxvf
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#download-jupyter-books-used-to-learn-linux-command-wget">
    Download jupyter books used to learn linux command -
    <code class="docutils literal notranslate">
@@ -314,6 +241,41 @@
      wget
     </span>
    </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#downlad-the-data-used-for-linux-practice-wget-command">
+   Downlad the data used for linux practice -
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     wget
+    </span>
+   </code>
+   command
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uncompress-linux-tp-directory-tar-zxvf">
+   Uncompress LINUX-TP directory -
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     tar
+    </span>
+    <span class="pre">
+     zxvf
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-the-data-used-for-ngs-practice-wget-command">
+   Download the data used for NGS practice -
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     wget
+    </span>
+   </code>
+   command
   </a>
  </li>
 </ul>
@@ -327,94 +289,55 @@
         
               <div>
                 
-  <div class="section" id="to-prepare-the-environment">
-<h1>To prepare the environment<a class="headerlink" href="#to-prepare-the-environment" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="where-am-i-on-the-ifb-cluster">
-<h2>Where am I on the IFB cluster ?<a class="headerlink" href="#where-am-i-on-the-ifb-cluster" title="Permalink to this headline">¶</a></h2>
-<p>To know, use your first linux command, the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/christine/TS/day1
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="first-day-to-load-the-data-used-for-the-training">
-<h2>FIRST DAY : to load the data used for the training<a class="headerlink" href="#first-day-to-load-the-data-used-for-the-training" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="copy-a-dataset-used-for-the-training-using-the-linux-command-cp">
-<h3>Copy a dataset used for the training using the linux command <code class="docutils literal notranslate"><span class="pre">cp</span></code><a class="headerlink" href="#copy-a-dataset-used-for-the-training-using-the-linux-command-cp" title="Permalink to this headline">¶</a></h3>
-<p>The directory is here : /ifb/data/public/teachdata/ngs-analysis-ird/</p>
-<div class="section" id="list-the-content-of-the-directory-using-the-linux-command-ls">
-<h4>List the content of the directory using the linux command <code class="docutils literal notranslate"><span class="pre">ls</span></code><a class="headerlink" href="#list-the-content-of-the-directory-using-the-linux-command-ls" title="Permalink to this headline">¶</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls /ifb/data/public/teachdata/ngs-analysis-ird/
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ls: impossible d&#39;accéder à &#39;/ifb/data/public/teachdata/ngs-analysis-ird/&#39;: Aucun fichier ou dossier de ce type
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="copy-this-directory-in-your-mydatalocal">
-<h4>Copy this directory in your “mydatalocal”<a class="headerlink" href="#copy-this-directory-in-your-mydatalocal" title="Permalink to this headline">¶</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp -r /ifb/data/public/teachdata/ngs-analysis-ird/* /ifb/data/mydatalocal
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="list-the-content-of-your-mydatalocal-using-the-linux-command-cp">
-<h4>List the content of your “mydatalocal” using the linux command <code class="docutils literal notranslate"><span class="pre">cp</span></code><a class="headerlink" href="#list-the-content-of-your-mydatalocal-using-the-linux-command-cp" title="Permalink to this headline">¶</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="downlad-the-data-used-for-linux-practice-wget-command">
-<h4>Downlad the data used for linux practice - <code class="docutils literal notranslate"><span class="pre">wget</span></code> command<a class="headerlink" href="#downlad-the-data-used-for-linux-practice-wget-command" title="Permalink to this headline">¶</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://bioinfo-storage.ird.fr/teachingNGS/LINUX-TP.tar.gz --no-check-certificate
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="uncompress-linux-tp-directory-tar-zxvf">
-<h4>Uncompress LINUX-TP directory - <code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">zxvf</span></code><a class="headerlink" href="#uncompress-linux-tp-directory-tar-zxvf" title="Permalink to this headline">¶</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar zxvf LINUX-TP.tar.gz 
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+  <div class="section" id="first-day-to-load-the-data-used-for-the-training">
+<h1>FIRST DAY : to load the data used for the training<a class="headerlink" href="#first-day-to-load-the-data-used-for-the-training" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="download-jupyter-books-used-to-learn-linux-command-wget">
 <h2>Download jupyter books used to learn linux command - <code class="docutils literal notranslate"><span class="pre">wget</span></code><a class="headerlink" href="#download-jupyter-books-used-to-learn-linux-command-wget" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://bioinfo-storage.ird.fr/teachingNGS/jupyterBook/DAY1/linuxLessonPracticalCloud.ipynb --no-check-certificate
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2021-01-18 11:45:01--  https://bioinfo-storage.ird.fr/teachingNGS/jupyterBook/DAY1/linuxLessonPracticalCloud.ipynb
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Résolution de bioinfo-storage.ird.fr (bioinfo-storage.ird.fr)… 91.203.35.166
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Connexion à bioinfo-storage.ird.fr (bioinfo-storage.ird.fr)|91.203.35.166|:443… connecté.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Avertissement : impossible de vérifier l’attribut bioinfo-storage.ird.fr du certificat, émis par «CN=TERENA SSL CA 3,O=TERENA,L=Amsterdam,ST=Noord-Holland,C=NL» :
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Impossible de vérifier localement l’autorité de l’émetteur.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>requête HTTP transmise, en attente de la réponse… 200 OK
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Taille : 16337 (16K) [text/plain]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Enregistre : «linuxLessonPracticalCloud.ipynb.1»
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          linuxLess   0%[                    ]       0  --.-KB/s               
+linuxLessonPractica 100%[===================&gt;]  15,95K  --.-KB/s    ds 0,001s  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-01-18 11:45:01 (11,6 MB/s) - «linuxLessonPracticalCloud.ipynb.1» enregistré [16337/16337]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -425,10 +348,153 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2021-01-18 11:45:01--  https://bioinfo-storage.ird.fr/teachingNGS/jupyterBook/DAY1/linuxPractice-onYourOwn.ipynb
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Résolution de bioinfo-storage.ird.fr (bioinfo-storage.ird.fr)… 91.203.35.166
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Connexion à bioinfo-storage.ird.fr (bioinfo-storage.ird.fr)|91.203.35.166|:443… connecté.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Avertissement : impossible de vérifier l’attribut bioinfo-storage.ird.fr du certificat, émis par «CN=TERENA SSL CA 3,O=TERENA,L=Amsterdam,ST=Noord-Holland,C=NL» :
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Impossible de vérifier localement l’autorité de l’émetteur.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>requête HTTP transmise, en attente de la réponse… 200 OK
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Taille : 20556 (20K)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Enregistre : «linuxPractice-onYourOwn.ipynb.1»
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          linuxPrac   0%[                    ]       0  --.-KB/s               
+linuxPractice-onYou 100%[===================&gt;]  20,07K  --.-KB/s    ds 0s      
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-01-18 11:45:01 (126 MB/s) - «linuxPractice-onYourOwn.ipynb.1» enregistré [20556/20556]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://bioinfo-storage.ird.fr/teachingNGS/jupyterBook/DAY1/fastq-stats.ipynb --no-check-certificate
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2021-01-18 11:45:01--  https://bioinfo-storage.ird.fr/teachingNGS/jupyterBook/DAY1/fastq-stats.ipynb
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Résolution de bioinfo-storage.ird.fr (bioinfo-storage.ird.fr)… 91.203.35.166
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Connexion à bioinfo-storage.ird.fr (bioinfo-storage.ird.fr)|91.203.35.166|:443… connecté.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Avertissement : impossible de vérifier l’attribut bioinfo-storage.ird.fr du certificat, émis par «CN=TERENA SSL CA 3,O=TERENA,L=Amsterdam,ST=Noord-Holland,C=NL» :
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Impossible de vérifier localement l’autorité de l’émetteur.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>requête HTTP transmise, en attente de la réponse… 404 Not Found
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-01-18 11:45:01 erreur 404 : Not Found.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="downlad-the-data-used-for-linux-practice-wget-command">
+<h2>Downlad the data used for linux practice - <code class="docutils literal notranslate"><span class="pre">wget</span></code> command<a class="headerlink" href="#downlad-the-data-used-for-linux-practice-wget-command" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://bioinfo-storage.ird.fr/teachingNGS/LINUX-TP.tar.gz --no-check-certificate
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://bioinfo-storage.ird.fr/teachingNGS/parseFastqStat.py --no-check-certificate
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="uncompress-linux-tp-directory-tar-zxvf">
+<h2>Uncompress LINUX-TP directory - <code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">zxvf</span></code><a class="headerlink" href="#uncompress-linux-tp-directory-tar-zxvf" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar zxvf LINUX-TP.tar.gz 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="download-the-data-used-for-ngs-practice-wget-command">
+<h2>Download the data used for NGS practice - <code class="docutils literal notranslate"><span class="pre">wget</span></code> command<a class="headerlink" href="#download-the-data-used-for-ngs-practice-wget-command" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget bioinfo-storage.ird.fr/teachingNGS/reference.fasta --no-check-certificate
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget bioinfo-storage.ird.fr/teachingNGS/shortReadsFastq.zip --no-check-certificate
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir shortReads
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv shortReadsFastq.zip shortReads/.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> shortReads
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip shortReadsFastq.zip
 </pre></div>
 </div>
 </div>

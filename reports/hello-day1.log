@@ -17,9 +17,9 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-ls /ifb/data/public/teachdata/ngs-analysis-ird/
+wget https://bioinfo-storage.ird.fr/teachingNGS/jupyterBook/DAY1/fastq-stats.ipynb --no-check-certificate
 ------------------
 
 
-: 2
+: 8
 
