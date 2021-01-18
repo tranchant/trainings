@@ -1,0 +1,79 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 1087, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 540, in async_execute
+    await self.async_execute_cell(
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 832, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 740, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import os.path
+import matplotlib.pyplot as plt
+import pandas as pd
+import sys
+import pprint as pp
+
+
+dir = "./fastqDirLR" #bamstat"
+fastqstat_csv = "stat-merged.csv"
+img_mappingob = "stat-merged.png"
+
+# open the file merging the fastq-stat results on the whole set of samples
+f=open(fastqstat_csv, "a+")
+header="sample,reads,len,len_mean,qual_mean, total_bases"
+f.write(header)
+
+file_list = os.listdir(dir)
+#print(file_list)
+
+# Parsing the individual fastq-stats file
+for file in file_list:
+
+    sample =os.path.basename(file).split('.')[0]
+    #print(file)
+    print(sample)
+    break
+    newLine=f"\n{sample},"
+
+    with open(dir+"/"+file,"r") as stat:
+        for line in stat:
+            line = line.rstrip()
+            #print(line)
+
+            if 'mapped (' in line or 'paired (' in line or 'singleton' in line:
+                #print(line.split('(')[1].split('%')[0])
+                newLine += f"{line.split('(')[1].split('%')[0]},"
+
+        if sample in obRg:
+            f.write(newLine)
+        elif sample in ogRg:
+            g.write(newLine)
+        else:
+            print(sample+"aie"+newLine)
+
+f.close()
+g.close()
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+[0;32m<ipython-input-1-67aa0fa6ba02>[0m in [0;36m<module>[0;34m[0m
+[1;32m     15[0m [0mf[0m[0;34m.[0m[0mwrite[0m[0;34m([0m[0mheader[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     16[0m [0;34m[0m[0m
+[0;32m---> 17[0;31m [0mfile_list[0m [0;34m=[0m [0mos[0m[0;34m.[0m[0mlistdir[0m[0;34m([0m[0mdir[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     18[0m [0;31m#print(file_list)[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     19[0m [0;34m[0m[0m
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: './fastqDirLR'
+FileNotFoundError: [Errno 2] No such file or directory: './fastqDirLR'
+
