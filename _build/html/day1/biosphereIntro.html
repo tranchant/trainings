@@ -1,0 +1,513 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What is a Jupyter Notebook ? &#8212; NGS Data Analysis Training</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/Manipulation-of-NGS-Data-for-Genomic-and-Population-Genetics-Analyses-300x300.jpeg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">NGS Data Analysis Training</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction.html">
+   Home
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  about this training
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/program.html">
+   Program
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/envt.html">
+   Environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/thank.html">
+   Thank
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/license.html">
+   Copyright and license
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  DAY1
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="day1.html">
+   Program
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/day1/biosphereIntro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/tranchant/TS"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/tranchant/TS/master?urlpath=tree/day1/biosphereIntro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   What is a Jupyter Notebook ?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-using-jupyter-notebook">
+   Why using Jupyter Notebook ?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Why using Jupyter Notebook ?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-will-you-use-jupyter-notebook-during-the-training">
+   How will you use Jupyter  Notebook during the training ?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   How will you use Jupyter  Notebook during the training ?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#biosphere-ifb-cloud-for-life-sciences">
+   BIOSPHERE, IFB CLOUD FOR LIFE SCIENCES
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   BIOSPHERE, IFB CLOUD FOR LIFE SCIENCES
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-start-with-biosphere">
+   Let’s start with biosphere
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connected-here-we-are">
+   Connected / Here we are
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#where-is-the-virtual-machine-that-we-will-use">
+   Where is the virtual machine that we will use?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-switch-on-the-ngsanalysisjupyter-vm">
+   Let’s switch on the NGSanalysisJupyter vm
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#user-cloud-dashboard">
+   User cloud dashboard
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-run-our-vm">
+   Let’s run our vm
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Let’s run our vm
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-your-first-jupyter-book-bash">
+   Create your first jupyter book (bash)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rename-your-jupyter-book">
+   Rename your jupyter book
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#launch-your-first-bash-command-wget">
+   Launch your first bash command
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     wget
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#don-t-hesitate-to-add-explanations">
+   Don’t hesitate to add explanations
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-hello-day1-ipynb-and-execute-all-the-cells">
+   Open “hello_day1.ipynb” and execute all the cells
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p># Discovering jupyter book and IFB cloud</p>
+<img style="float: left;"   width="100px" heigth="100px"  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png">
+<img style="float: right;"   src="https://ressources.france-bioinformatique.fr/sites/default/files/logo-ifb_RVB_v2.jpg">
+<br /> 
+<p>Christine Tranchant-Dubreuil and François Sabot</p>
+<div class="section" id="what-is-a-jupyter-notebook">
+<h1>What is a Jupyter Notebook ?<a class="headerlink" href="#what-is-a-jupyter-notebook" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><strong>One of the most popular tool among data scientists</strong> to perform data analysis and generate reports.</p></li>
+<li><p>Provides a complete environment in which numerous programming languages can be use through a simple web browser</p></li>
+</ul>
+<img style="float: center;"   src="https://cdn.analyticsvidhya.com/wp-content/uploads/2018/04/jupyter-768x382.png">
+</div>
+<div class="section" id="why-using-jupyter-notebook">
+<h1>Why using Jupyter Notebook ?<a class="headerlink" href="#why-using-jupyter-notebook" title="Permalink to this headline">¶</a></h1>
+<p>An unique interface/file where text,code and output codes can be mixed  :</p>
+<ul class="simple">
+<li><p>code (R, python, bash…) can be executed inside each cell of the notebook</p></li>
+<li><p>code output is directly displayed in the notebook</p></li>
+<li><p>explanations, formulas, charts can be added</p></li>
+</ul>
+<img style="float: left;" width="500" height="500" src="https://tranchant.github.io/TransmittingScience/img/jb1.png">
+<img style="float: right;" width="500" height="500" src="https://tranchant.github.io/TransmittingScience/img/jb2.png"></div>
+<div class="section" id="id1">
+<h1>Why using Jupyter Notebook ?<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>One file to analyze data (with R, Python, linux) and generate reports</p></li>
+<li><p>the Notebooks can be exported to many formats, including PDF and HTML, which makes it easy to share your project with anyone.</p></li>
+</ul>
+<p><strong>Analysis are more transparent, repeatable and shareable</strong></p>
+<p><strong>lab notebook for science data ?</strong></p>
+</div>
+<div class="section" id="how-will-you-use-jupyter-notebook-during-the-training">
+<h1>How will you use Jupyter  Notebook during the training ?<a class="headerlink" href="#how-will-you-use-jupyter-notebook-during-the-training" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>through a jupyter hub connected to bioinformatics clusters</p></li>
+</ul>
+<img style="float: center;" width="500px" heigth="500px"  src="https://ressources.france-bioinformatique.fr/sites/default/files/events/serverroom_69046129.jpg"></div>
+<div class="section" id="id2">
+<h1>How will you use Jupyter  Notebook during the training ?<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>through a jupyter hub connected to bioinformatics clusters</p></li>
+<li><p>we will create jupyter books and execute analysis throught them</p></li>
+</ul>
+<img style="float:center;" width="800" height="800" src="https://tranchant.github.io/TransmittingScience/img/cloudCreateJB.png">
+</div>
+<div class="section" id="biosphere-ifb-cloud-for-life-sciences">
+<h1>BIOSPHERE, IFB CLOUD FOR LIFE SCIENCES<a class="headerlink" href="#biosphere-ifb-cloud-for-life-sciences" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>A federation of clouds, which relies on interconnected IFB’s infrastructures, providing distributed services to analyze life science data. <img style="float: left;"   src="https://ressources.france-bioinformatique.fr/sites/default/files/logo-ifb_RVB_v2.jpg"></p></li>
+</ul>
+<img style="float: right;" width="400px" heigth="400px"  src="https://www.france-bioinformatique.fr/wp-content/uploads/carteFull-IFB-612x800.png">
+</div>
+<div class="section" id="id3">
+<h1>BIOSPHERE, IFB CLOUD FOR LIFE SCIENCES<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>A large set of virtual machines to access larger CPU resources and to use different data sources/tools</p></li>
+<li><p>Used for scientific production in the life sciences, developments, and also to support events like cloud and scientific training sessions, hackathons or workshops.</p></li>
+</ul>
+<img style="float: center;"  width="500px" heigth="500px" src="https://www.france-bioinformatique.fr/wp-content/uploads/Cloud-IFB-v2.jpg"></div>
+<div class="section" id="let-s-start-with-biosphere">
+<h1>Let’s start with biosphere<a class="headerlink" href="#let-s-start-with-biosphere" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Open the biosphere website : https://biosphere.france-bioinformatique.fr/cloud/ and sign in</p></li>
+</ul>
+<img style="float: center;" width="800" height="800" src="https://tranchant.github.io/TransmittingScience/img/cloudsignin.png"></div>
+<div class="section" id="connected-here-we-are">
+<h1>Connected / Here we are<a class="headerlink" href="#connected-here-we-are" title="Permalink to this headline">¶</a></h1>
+<img style="float: center;" width="600" height="600" src="https://tranchant.github.io/TransmittingScience/img/cloudHome.png"></div>
+<div class="section" id="where-is-the-virtual-machine-that-we-will-use">
+<h1>Where is the virtual machine that we will use?<a class="headerlink" href="#where-is-the-virtual-machine-that-we-will-use" title="Permalink to this headline">¶</a></h1>
+<img style="float: center;" width="800" height="800" src="https://tranchant.github.io/TransmittingScience/img/cloudRainbio.png"></div>
+<div class="section" id="let-s-switch-on-the-ngsanalysisjupyter-vm">
+<h1>Let’s switch on the NGSanalysisJupyter vm<a class="headerlink" href="#let-s-switch-on-the-ngsanalysisjupyter-vm" title="Permalink to this headline">¶</a></h1>
+<img style="float: center;" width="800" height="800" src="https://tranchant.github.io/TransmittingScience/img/cloudvm.png"></div>
+<div class="section" id="user-cloud-dashboard">
+<h1>User cloud dashboard<a class="headerlink" href="#user-cloud-dashboard" title="Permalink to this headline">¶</a></h1>
+<img style="float: center;" width="800" height="800" src="https://tranchant.github.io/TransmittingScience/img/clouddashboard.png"></div>
+<div class="section" id="let-s-run-our-vm">
+<h1>Let’s run our vm<a class="headerlink" href="#let-s-run-our-vm" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>get the tocken identifiant (params link)</p></li>
+</ul>
+<img style="float: center;" width="800" height="800" src="https://tranchant.github.io/TransmittingScience/img/cloudtoken.png"></div>
+<div class="section" id="id4">
+<h1>Let’s run our vm<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>open our vm (https link) to open jupyter hub on our vm</p></li>
+</ul>
+<img style="float: center;" width="800" height="800" src="https://tranchant.github.io/TransmittingScience/img/cloudJupyterHub.png"></div>
+<div class="section" id="create-your-first-jupyter-book-bash">
+<h1>Create your first jupyter book (bash)<a class="headerlink" href="#create-your-first-jupyter-book-bash" title="Permalink to this headline">¶</a></h1>
+<img style="float: center;" width="800" height="800" src="https://tranchant.github.io/TransmittingScience/img/cloudCreateJB.png"></div>
+<div class="section" id="rename-your-jupyter-book">
+<h1>Rename your jupyter book<a class="headerlink" href="#rename-your-jupyter-book" title="Permalink to this headline">¶</a></h1>
+<img style="float: center;" width="800" height="800" src="https://tranchant.github.io/TransmittingScience/img/cloudRenameJB.png"></div>
+<div class="section" id="launch-your-first-bash-command-wget">
+<h1>Launch your first bash command <code class="docutils literal notranslate"><span class="pre">wget</span></code><a class="headerlink" href="#launch-your-first-bash-command-wget" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>to download a jupyter book to prepare your working environment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wget</span> <span class="pre">https://bioinfo-storage.ird.fr/teachingNGS/jupyterBook/hello-day1.ipynb</span> <span class="pre">--no-check-certificate</span></code></p></li>
+</ul>
+<img style="float: center;" width="800" height="800" src="https://tranchant.github.io/TransmittingScience/img/cloudJBwget.png"></div>
+<div class="section" id="don-t-hesitate-to-add-explanations">
+<h1>Don’t hesitate to add explanations<a class="headerlink" href="#don-t-hesitate-to-add-explanations" title="Permalink to this headline">¶</a></h1>
+<img style="float: center;" width="800" height="800" src="https://tranchant.github.io/TransmittingScience/img/cloudJB1Md.png"></div>
+<div class="section" id="open-hello-day1-ipynb-and-execute-all-the-cells">
+<h1>Open “hello_day1.ipynb” and execute all the cells<a class="headerlink" href="#open-hello-day1-ipynb-and-execute-all-the-cells" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>This notebook prepare your environment used for this training</p></li>
+<li><p>Execute Cell 3 and cell 6! At the end of the day, you will understand all the linux commands written in this notebook</p></li>
+</ul>
+<img style="float: center;" width="800" height="800" src="https://tranchant.github.io/TransmittingScience/img/cloudEnvtBeforeTP.png"></div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "tranchant/TS",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "bash"
+        },
+        kernelOptions: {
+            kernelName: "bash",
+            path: "./day1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'bash'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Christine Tranchant-Dubreuil and François Sabot<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

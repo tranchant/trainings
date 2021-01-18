@@ -1,0 +1,833 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First steps on Linux &#8212; NGS Data Analysis Training</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/Manipulation-of-NGS-Data-for-Genomic-and-Population-Genetics-Analyses-300x300.jpeg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">NGS Data Analysis Training</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction.html">
+   Home
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  about this training
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/program.html">
+   Program
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/envt.html">
+   Environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/thank.html">
+   Thank
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/license.html">
+   Copyright and license
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  DAY1
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="day1.html">
+   Program
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/day1/linuxLessonPracticalCloud.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/tranchant/TS"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/tranchant/TS/master?urlpath=tree/day1/linuxLessonPracticalCloud.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   First steps on Linux
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linux-command-syntax">
+   Linux command syntax
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#your-first-command-pwd">
+   Your first command
+   <em>
+    pwd
+   </em>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nd-command-ls">
+   2nd command
+   <em>
+    ls
+   </em>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nd-command-option-ls-l">
+   2nd command + option
+   <em>
+    ls -l
+   </em>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nd-command-argument">
+   2nd command + argument
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#it-s-your-turn">
+     It’s your turn !
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-few-basic-commands">
+   A few Basic Commands
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   A few Basic Commands
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-file-tree-file-system">
+   The file tree - file system
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     It’s your turn !
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-file-tree-main-directories">
+   The file tree - Main directories
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#path-of-a-file">
+   Path of a file
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#in-brief">
+   In brief
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#absolute-path">
+   Absolute Path
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Absolute Path
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#relative-path">
+   Relative Path
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Relative Path
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rules-for-naming-file-and-directory-names">
+   Rules for naming file and directory names
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#command-cd">
+   Command
+   <em>
+    cd
+   </em>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-commands">
+   Some Commands
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#command-cat">
+   command cat
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#command-wc">
+   command wc
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#command-head">
+   command head
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#command-tail">
+   command tail
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="first-steps-on-linux">
+<h1>First steps on Linux<a class="headerlink" href="#first-steps-on-linux" title="Permalink to this headline">¶</a></h1>
+<p>Commands for <em>moving around the file system</em> and <em>manipulating files/folders</em></p>
+<img style="float: left;" width="800" height="800"  src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Standard-unix-filesystem-hierarchy.svg">
+</div>
+<div class="section" id="linux-command-syntax">
+<h1>Linux command syntax<a class="headerlink" href="#linux-command-syntax" title="Permalink to this headline">¶</a></h1>
+<p>command [ -options] [ arguments ]</p>
+</div>
+<div class="section" id="your-first-command-pwd">
+<h1>Your first command <em>pwd</em><a class="headerlink" href="#your-first-command-pwd" title="Permalink to this headline">¶</a></h1>
+<p><strong>pwd</strong> print the name of the curent directory (the full path)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/christine/TS/day1
+</pre></div>
+</div>
+</div>
+</div>
+<img style="float: center;" width="200" height="200"  src="https://tranchant.github.io/TransmittingScience/img/arbo1.png"></div>
+<div class="section" id="nd-command-ls">
+<h1>2nd command <em>ls</em><a class="headerlink" href="#nd-command-ls" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>without argument : list all the files in the current directory (by default)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>biosphereIntro.ipynb        fastq-stats.ipynb  linuxLessonPracticalCloud.ipynb
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>biosphereIntro.slides.html  hello-day1.ipynb   linuxLesson.slides.html
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Green">day1.md</span>                     linuxLesson.ipynb  linuxPractice-onYourOwn.ipynb
+</pre></div>
+</div>
+</div>
+</div>
+<img style="float: center;" width="200" height="200"  src="https://tranchant.github.io/TransmittingScience/img/arbo2.png"></div>
+<div class="section" id="nd-command-option-ls-l">
+<h1>2nd command + option <em>ls -l</em><a class="headerlink" href="#nd-command-option-ls-l" title="Permalink to this headline">¶</a></h1>
+<p>ls -l : <em>list files with more information about each file</em> (long)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -l
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total 732
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 christine christine  10005 janv. 17 21:15 biosphereIntro.ipynb
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 christine christine 290885 janv. 14 12:20 biosphereIntro.slides.html
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rwxr-xr-x 1 christine christine   1265 janv. 17 20:52 <span class=" -Color -Color-Bold -Color-Bold-Green">day1.md</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 christine christine  38015 janv. 17 19:15 fastq-stats.ipynb
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 christine christine   4346 janv. 17 09:29 hello-day1.ipynb
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 christine christine  27049 janv. 17 21:12 linuxLesson.ipynb
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 christine christine  16337 janv. 17 16:58 linuxLessonPracticalCloud.ipynb
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 christine christine 316059 janv. 17 21:15 linuxLesson.slides.html
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 christine christine  20556 janv. 17 20:36 linuxPractice-onYourOwn.ipynb
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="nd-command-argument">
+<h1>2nd command + argument<a class="headerlink" href="#nd-command-argument" title="Permalink to this headline">¶</a></h1>
+<p>with argument &lt;=&gt; directory path</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls fastqDirLR
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ls: impossible d&#39;accéder à &#39;fastqDirLR&#39;: Aucun fichier ou dossier de ce type
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<img style="float: left;" width="100" height="100"  src="http://vibepictures.com/wp-content/uploads/2014/02/avatar-tux-jedi-star-wars-linux-acatos1.png"> 
+<div class="section" id="it-s-your-turn">
+<h2>It’s your turn !<a class="headerlink" href="#it-s-your-turn" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    * list the content of the directory fastqDirSR 
+</pre></div>
+</div>
+<img style="float: center;" width="200" height="200"  src="https://tranchant.github.io/TransmittingScience/img/arbo2.png"></div>
+</div>
+<div class="section" id="a-few-basic-commands">
+<h1>A few Basic Commands<a class="headerlink" href="#a-few-basic-commands" title="Permalink to this headline">¶</a></h1>
+<p>How to get help about one command</p>
+<ul class="simple">
+<li><p>with the ’option –help ou -h</p></li>
+<li><p>with the command man</p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h1>A few Basic Commands<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>pwd</p></td>
+<td><p>Display the full path of the current directory</p></td>
+</tr>
+<tr class="row-odd"><td><p>ls</p></td>
+<td><p>List all files/directories</p></td>
+</tr>
+<tr class="row-even"><td><p>ls -l</p></td>
+<td><p>Display all files (Long listing)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="the-file-tree-file-system">
+<h1>The file tree - file system<a class="headerlink" href="#the-file-tree-file-system" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Directory structure starts at the root directory called “/” (slash)</p></li>
+</ul>
+<img style="float: center;" width="500" height="500"  src="https://tranchant.github.io/TransmittingScience/img/arbo3.png"><img style="float: left;" width="100" height="100"  src="http://vibepictures.com/wp-content/uploads/2014/02/avatar-tux-jedi-star-wars-linux-acatos1.png"> 
+<div class="section" id="id2">
+<h2>It’s your turn !<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    * list the content of the root directory
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="the-file-tree-main-directories">
+<h1>The file tree - Main directories<a class="headerlink" href="#the-file-tree-main-directories" title="Permalink to this headline">¶</a></h1>
+<img style="float: center;" width="500" height="500"  src="https://tranchant.github.io/TransmittingScience/img/arbo4.png">
+</div>
+<div class="section" id="path-of-a-file">
+<h1>Path of a file<a class="headerlink" href="#path-of-a-file" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Path =  location to a file/directory in the file system</p></li>
+<li><p>On linux filetree, you can use absolute or relative path</p></li>
+</ul>
+<img style="float: left;" width="100" height="100"  src="https://i.pinimg.com/236x/a8/cc/00/a8cc00c8b1b3aa8d37749fd3e00eaa25--page-blogspot-com.jpg"> 
+        * What is the difference between the absolute and relative path ?
+</div>
+<div class="section" id="in-brief">
+<h1>In brief<a class="headerlink" href="#in-brief" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Path =  location to a file/directory in the file system</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>ABSOLUTE</p></th>
+<th class="text-align:left head"><p>RELATIVE</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Complete path of a file <br />starting from the root directory /</p></td>
+<td class="text-align:left"><p>Path related to the present working directory <br /> (where the user is working)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>starts always with /</p></td>
+<td class="text-align:left"><p>Never starts with /</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>always good wherever user is working</p></td>
+<td class="text-align:left"><p>Depends on where the user is working</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="absolute-path">
+<h1>Absolute Path<a class="headerlink" href="#absolute-path" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Always start with / (root directory)</p></li>
+<li><p>Always works wherever user is working on the server or vm</p></li>
+</ul>
+<img style="float: center;" width="500" height="500"  src="https://tranchant.github.io/TransmittingScience/img/absolute1.png">
+<img style="float: left;" width="100" height="100"  src="https://i.pinimg.com/236x/a8/cc/00/a8cc00c8b1b3aa8d37749fd3e00eaa25--page-blogspot-com.jpg"> 
+        * What is the absolute path of the file sequence.fasta ?
+</div>
+<div class="section" id="id3">
+<h1>Absolute Path<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Always start with / (root directory)</p></li>
+<li><p>Always works wherever user is working on the server or vm</p></li>
+</ul>
+<img style="float: center;" width="500" height="500"  src="https://tranchant.github.io/TransmittingScience/img/absolute2.png">
+<img style="float: left;" width="100" height="100"  src="https://i.pinimg.com/236x/a8/cc/00/a8cc00c8b1b3aa8d37749fd3e00eaa25--page-blogspot-com.jpg"> 
+        * What is the absolute path of the  directory script ?
+</div>
+<div class="section" id="relative-path">
+<h1>Relative Path<a class="headerlink" href="#relative-path" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Path related to the present working directory</p></li>
+<li><p>Never starts with /</p></li>
+</ul>
+<img style="float: center;" width="500" height="500"  src="https://tranchant.github.io/TransmittingScience/img/relative1.png">
+<img style="float: left;" width="100" height="100"  src="https://i.pinimg.com/236x/a8/cc/00/a8cc00c8b1b3aa8d37749fd3e00eaa25--page-blogspot-com.jpg"> 
+        * What is the relative path of the file sequence.fasta ?
+</div>
+<div class="section" id="id4">
+<h1>Relative Path<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Path related to the present working directory</p></li>
+<li><p>Never starts with /</p></li>
+</ul>
+<img style="float: center;" width="500" height="500"  src="https://tranchant.github.io/TransmittingScience/img/relative2.png"><img style="float: left;" width="100" height="100"  src="https://i.pinimg.com/236x/a8/cc/00/a8cc00c8b1b3aa8d37749fd3e00eaa25--page-blogspot-com.jpg"> 
+        * What is the relative path of the  directory fasta ?
+</div>
+<div class="section" id="rules-for-naming-file-and-directory-names">
+<h1>Rules for naming file and directory names<a class="headerlink" href="#rules-for-naming-file-and-directory-names" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>linux is case sensitive</p></li>
+<li><p>Only ROMAN letters, numbers and _ -</p></li>
+<li><p>No space, accent or special symbol</p></li>
+<li><p>No need to use filename extension (.txt), just to improve readability of filenames.</p></li>
+</ul>
+</div>
+<div class="section" id="command-cd">
+<h1>Command <em>cd</em><a class="headerlink" href="#command-cd" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>cd as Change Directory</p></li>
+<li><p>Move from the current directory into a new directory</p></li>
+</ul>
+<p><em>cd DIRECTORY NAME (absolute or relative path)</em>_</p>
+<img style="float: left;" width="100" height="100"  src="https://i.pinimg.com/236x/a8/cc/00/a8cc00c8b1b3aa8d37749fd3e00eaa25--page-blogspot-com.jpg"> 
+        * Move into the script directory (absolute path)
+<img style="float: center;" width="500" height="500"  src="https://southgreenplatform.github.io/trainings//images/tpLinux/tp-arbo.png"><img style="float: left;" width="100" height="100"  src="https://i.pinimg.com/236x/a8/cc/00/a8cc00c8b1b3aa8d37749fd3e00eaa25--page-blogspot-com.jpg"> 
+        * Move into the mydatalocal directory (absolute path)
+<img style="float: center;" width="500" height="500"  src="https://southgreenplatform.github.io/trainings//images/tpLinux/tp-arbo.png"><img style="float: left;" width="100" height="100"  src="https://i.pinimg.com/236x/a8/cc/00/a8cc00c8b1b3aa8d37749fd3e00eaa25--page-blogspot-com.jpg"> 
+        * Move into the Data directory (relative path)
+<img style="float: center;" width="500" height="500"  src="https://southgreenplatform.github.io/trainings//images/tpLinux/tp-arbo.png"></div>
+<div class="section" id="some-commands">
+<h1>Some Commands<a class="headerlink" href="#some-commands" title="Permalink to this headline">¶</a></h1>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p></p></th>
+<th class="text-align:left head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>pwd</p></td>
+<td class="text-align:left"><p>Display the full path of the current directory</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>ls</p></td>
+<td class="text-align:left"><p>List all files/directories</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>cd DIR_NAME</p></td>
+<td class="text-align:left"><p>Change the working directory</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>rm nom_fichier</p></td>
+<td class="text-align:left"><p>Remove a directory</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>cp file1 file2</p></td>
+<td class="text-align:left"><p>Make a copy of file1 and calls it file2</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>cp FILE_NAME DIR_NAME</p></td>
+<td class="text-align:left"><p>Copy the file FILE_NAME in the directory DIR_NAME</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>cp FILE DIR/NEW_FILE</p></td>
+<td class="text-align:left"><p>Mix of 2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="command-cat">
+<h1>command cat<a class="headerlink" href="#command-cat" title="Permalink to this headline">¶</a></h1>
+<p>cat nom_fichier
+Displays the content of a file on the screen
+(Don’t use it with big files!!)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat /ifb/data/mydatalocal/LINUX-TP/Data/vcf/vcfForSNiPlay/testsnmf.vcf
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ifb/data/mydatalocal/LINUX-TP
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="command-wc">
+<h1>command wc<a class="headerlink" href="#command-wc" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-l</span></code>  : Displays the nomber of lines in a file</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wc -l /ifb/data/mydatalocal/LINUX-TP/Data/vcf/vcfForSNiPlay/testsnmf.vcf
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17002 reference.fasta
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="command-head">
+<h1>command head<a class="headerlink" href="#command-head" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">head</span> <span class="pre">nom_fichier</span></code>  : writes the first ten lines of a file to the screen</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>head /ifb/data/mydatalocal/LINUX-TP/Data/vcf/vcfForSNiPlay/testsnmf.vcf
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;Reference
+TTCTTTTCCTCATCCTCTCTTCTTCCTTATCTCATCCTCTATCTCCCTCCTTTCTCTTTT
+CTCTAGTGATGACTGCGAGCCGCGAGTGGCGGCGCAACTAGCAGGCGGAGTGTGCGACGA
+TGACAGAGGCACGGCGGAGGAAAGGGGACAATCAGGACGGCGGCGGCGCGGGGACACCAT
+GCAACGACGCCCACGCCCGAAGCGATGACATTAGCGGTGACAGTTGTGGCGTAGATCAAG
+TGAGGCGCGAGAGGTGGAAGCGGGGAGCACCGACGGCAGCATGCGGTGCACAGGCCGAAG
+TTGGCGGTAGCGTCACTAGTTCACGGGGGGCGACGGGATGCACGGCATCCAAGGTGCAGC
+AGGAGGACACGGTGCGGGAGTGCAAGGAGCAGTGGCGACACATGAAGGGTGCGGTAGCAT
+TGTGGCAGCAACTCGCCTCGGCCCACGCTGACTAACTTCGCTCCCTCCGCCTCACCGCTG
+CCACGCTCTCCCGCTTTCGTGCAAGGCCACCCATCTCTCGCCATGTCCCACCACACCGCG
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>head -n <span class="m">20</span> ifb/data/mydatalocal/LINUX-TP/Data/vcf/vcfForSNiPlay/testsnmf.vcf
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="command-tail">
+<h1>command tail<a class="headerlink" href="#command-tail" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tail</span> <span class="pre">nom_fichier</span></code>  : writes the last ten lines of a file to the screen</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tail /ifb/data/mydatalocal/LINUX-TP/Data/vcf/vcfForSNiPlay/testsnmf.vcf
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CTTGTTGCTTCCTCTTCCCCTCTTTTCATTTTTGTTATTTTTTATATTTCTATATTAACG
+AAGAATCAGATTTCTTAATAATCAGTTATGATTTTTTTTAATGTGGCTTTGATCTTTAGG
+TGGTGCCCATGGAAAATTTAAATGGTCGAAAACGTGTTGAAGAAGGGGAGCTTTGTGATA
+GGAGAAATGGTGATCAATCTTATCTTGTAAATTCATCACTTGATGCAGTTCTATGCCAAC
+TTCCTATATTCATGTTTTTTTCATTTTTCAGGAAGAGGAGTTGATCTTAATAGAAATTGG
+AGTGTTGATTGGGGAAAGAAGGAAAAGGTTGTTTTCTCAGCAGTTTATTTTATGCACAGG
+GAAAACTGTTTCCTTTTGACTTACTGTAGTGTGCATGTTGATTTTACTGAATTGCGTCTT
+AAGCTAATTACCTAAATTCATATGGACAAGACCGTAGCATTCCCTAAACTTGCTCGCTTG
+CTACCATTGATTGACATCCTTACTATCTTAGAACTATTTTTAATTTAGATCTATAGAGAA
+TTTAGAAAATAGACCTCTGCA
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "tranchant/TS",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "bash"
+        },
+        kernelOptions: {
+            kernelName: "bash",
+            path: "./day1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'bash'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Christine Tranchant-Dubreuil and François Sabot<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

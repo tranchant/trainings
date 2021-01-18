@@ -1,0 +1,13 @@
+- file: introduction
+
+- part: about this training
+  chapters:
+  - file: about/program
+  - file: about/envt
+  - file: about/contributing
+  - file: about/thank
+  - file: about/license
+  
+- part: DAY1
+  chapters:
+  - file: day1/day1

@@ -1,0 +1,5 @@
+jupyter-book
+ghp-import
+sphinx-thebe
+pandas==1.0.4
+plotly
